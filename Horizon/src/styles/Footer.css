@@ -1,0 +1,41 @@
+.footer {
+  background: #111;
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.footer-content p {
+  color: #ccc;
+  margin: 0.8rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00acee; /* blue tint on hover */
+}
+
+.copyright {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid #222;
+  padding-top: 1rem;
+}

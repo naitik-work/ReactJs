@@ -43,4 +43,4 @@ const ProfileCard = ({ name, bio, coverImg, profileImg, likes, posts, shares }) 
   )
 }
 
-export default Card
+export default ProfileCard

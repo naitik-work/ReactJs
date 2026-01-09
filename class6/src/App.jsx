@@ -2,13 +2,15 @@ import React from 'react'
 import { useState } from 'react';
 
 const App = () => {
+  const [Title, setTitle] = useState("");
+  const [allUsers, setallUsers] = useState([]);
   const submitHandler= (e)=>{
     e.preventDefault();
-    console.log(Title);
+    setallUsers([...allUsers,Title]);
     setTitle("");
 
   }
-  const [Title, setTitle] = useState("");
+
   return (
     <div>
       <form onSubmit={(e)=>{
@@ -23,7 +25,11 @@ const App = () => {
         required/>
         <button>Submit</button>
       </form>
+      {allUsers.map((elem,idx)=>{
+        return <h3 key={idx}>{elem}</h3>
+      })}
     </div>
+
   )
 }
 

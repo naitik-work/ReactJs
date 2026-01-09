@@ -5,10 +5,10 @@ const App = () => {
   const submitHandler= (e)=>{
     e.preventDefault();
     console.log(Title);
-    setTitle()
+    setTitle("");
 
   }
-  const [Title, setTitle] = useState('');
+  const [Title, setTitle] = useState("");
   return (
     <div>
       <form onSubmit={(e)=>{
@@ -18,7 +18,8 @@ const App = () => {
         placeholder='Enter your name'
         onChange={(e)=>{
           setTitle(e.target.value)
-        }} value={Title}
+        }} 
+        value={Title}
         required/>
         <button>Submit</button>
       </form>

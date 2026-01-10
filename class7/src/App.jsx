@@ -68,14 +68,14 @@ const App = () => {
         <button className='px-5 py-2 active:scale-95 cursor-pointer bg-emerald-700 rounded m-2 lg:w-[97%] md:w-full sm:w-full'>Create User</button>
 
       </form>
-      <div className='px-4 py-10 gap-4 flex flex-wrap'>
-        {allUsers.map(function(elem,idx){
-          return <div key={idx}>
-            <Card elem={elem} idx={idx} deletehandler={deletehandler}/>
-          </div>
-        })}
+      <div className="flex flex-wrap justify-center gap-6 my-6">
+        {allUsers.map((elem, idx) => (
+          <Card key={idx} elem={elem} idx={idx} deletehandler={deletehandler} />
+        ))}
       </div>
-    </div>
+
+      </div>
+
   )
 }
 

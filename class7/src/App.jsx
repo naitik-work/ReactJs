@@ -7,7 +7,10 @@ const App = () => {
   const [imageURL, setImageURL] = useState('');
   const [userRole, setUserRole] = useState('');
   const [userDesc, setUserDesc] = useState('');
-  const [allUsers, setAllUsers] = useState([]);
+  
+  localStorage.clear()
+  const localData = JSON.parse(localStorage.getItem('all-users')) || []
+  const [allUsers, setAllUsers] = useState([localData]);
 
   //Form Handling
   const submitHandler=(e)=>{
@@ -15,6 +18,7 @@ const App = () => {
     const oldUsers=[...allUsers];
     oldUsers.push({username,imageURL,userRole,userDesc});
     setAllUsers(oldUsers);
+    localStorage.setItem('all-users', JSON.stringify(oldUsers))
     setUsername('');
     setImageURL('');
     setUserRole('');
@@ -26,6 +30,8 @@ const App = () => {
     const copyUsers=[...allUsers];
     copyUsers.splice(idx,1);
     setAllUsers(copyUsers);
+
+    localStorage.setItem('all-users', JSON.stringify(copyUsers))
   }
   return (
     <div className='h-screen bg-black text-white'>

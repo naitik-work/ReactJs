@@ -1,18 +1,26 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import axios from 'axios';
 const App = () => {
   const [counter, setCounter] = useState(0);
-  const [title, setTitle] = useState('');
+  const [username, setUsername] = useState('');
+
+
+  const getData= async()=>{
+    const response= await axios.get('https://randomuser.me/api/')
+    setUsername(response.data.results[0].name.first+" "+ response.data.results[0].name.last);
+  }
 
   useEffect(function(){
-    console.log('UseEffect is running...')
-  })
+    getData();
+  },[counter])
   return (
     <div>
-      <input value={title} type="text" placeholder='Enter your name' onChange={(e)=>{
-        setTitle(e.target.value);
-      }} />
+
+      <h1>{username}</h1>
+
+
       <h1>{counter}</h1>
       <button onClick={()=>{
         setCounter(counter+1);

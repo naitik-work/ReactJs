@@ -1,34 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
+const App = () => {
+  const [counter, setCounter] = useState(0);
+  const [title, setTitle] = useState('');
 
-function App() {
-  const [count, setCount] = useState(0)
-
+  useEffect(function(){
+    console.log('UseEffect is running...')
+  })
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <input value={title} type="text" placeholder='Enter your name' onChange={(e)=>{
+        setTitle(e.target.value);
+      }} />
+      <h1>{counter}</h1>
+      <button onClick={()=>{
+        setCounter(counter+1);
+      }}>Increase</button>
+
+      
+    </div>
   )
 }
 

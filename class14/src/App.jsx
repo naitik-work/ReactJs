@@ -6,7 +6,8 @@ import Section from './components/Section'
 const App = () => {
   return (
     <div>
-      <Navbar/>
+      <Navbar>
+      </Navbar>
       <Section/>
       <Footer/>
     </div>
